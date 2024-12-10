@@ -1,0 +1,13 @@
+<h1>API Data</h1>
+<div *ngIf="data.length > 0; else noData">
+  <ul>
+    <li *ngFor="let user of data">
+      <img [src]="user.avatar" alt="{{ user.first_name }}'s avatar" width="100" height="100" />
+      <h2>{{ user.first_name }} {{ user.last_name }}</h2>
+      <p><strong>Email:</strong> {{ user.email }}</p>
+    </li>
+  </ul>
+</div>
+<ng-template #noData>
+  <p>No data available.</p>
+</ng-template>
